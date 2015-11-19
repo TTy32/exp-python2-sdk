@@ -16,7 +16,7 @@ def authenticate(username, password, organization):
   payload["username"] = username
   payload["password"] = password
   payload["org"] = organization
-  response = requests.post(url, json=payload)
+  response = requests.post(url, data=payload)
   response.raise_for_status()
   body = response.json()
   return body["token"]
